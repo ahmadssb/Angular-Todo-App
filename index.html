@@ -17,8 +17,8 @@
 				<span class="numberOfList"> {{todoList.remaining()}} of {{todoList.todoList.length}} remaining  [<a href="">delete</a>]</span>
 					<ul class="list" ng-repeat="todo in todoList.todoList">
 						<li class="item">
-							<input type="checkbox">&nbsp;
-							<span>{{todo.text}}</span>
+							<input type="checkbox" ng-model="todo.done">&nbsp;
+							<span class="todo-{{todo.done}}">{{todo.text}} - {{todo.done}} </span>
 						</li>
 					</ul>
 				</div>
