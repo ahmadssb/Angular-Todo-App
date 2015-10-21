@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app= "todoApp">
+<html lang="en" ng-app="todoApp">
 
 <head>
 	<meta charset="UTF-8">
@@ -9,7 +9,32 @@
 </head>
 
 <body>
-
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>TODO App</h2>
+				<div class="todoList">
+					<span class="numberOfList"> {xx} of {xx} remaining  [<a href="">delete</a>]</span>
+					<ul class="list">
+						<li class="item">
+							<input type="checkbox">&nbsp;
+							<span>Item 1</span>
+						</li>
+					</ul>
+				</div>
+				<div class="newTask">
+					<form class="form-group">
+						<feildset>
+							<input type="text" class="form-control">
+						</feildset>
+						<feildset>
+							<input type="submit" value="submit" class="btn-primary">
+						</feildset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 	<script type="text/javascript" src="../../../../_Libraries/node_modules/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="../../../../_Libraries/node_modules/angular/angular.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-route.js"></script>
