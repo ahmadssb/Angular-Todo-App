@@ -11,21 +11,21 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-12" ng-controller="TodoListController as todoList">
 				<h2>TODO App</h2>
 				<div class="todoList">
-					<span class="numberOfList"> {xx} of {xx} remaining  [<a href="">delete</a>]</span>
-					<ul class="list">
+				<span class="numberOfList"> {{todoList.todoList.length}} of {{todoList.todoList.length}} remaining  [<a href="">delete</a>]</span>
+					<ul class="list" ng-repeat="todo in todoList.todoList">
 						<li class="item">
 							<input type="checkbox">&nbsp;
-							<span>Item 1</span>
+							<span>{{todo.text}}</span>
 						</li>
 					</ul>
 				</div>
 				<div class="newTask">
-					<form class="form-group">
+					<form class="form-group" ng-submit="todoList.addTodo()">
 						<feildset>
-							<input type="text" class="form-control">
+							<input type="text" class="form-control" ng-model="todoList.text"><br>{{todoList.text}}
 						</feildset>
 						<feildset>
 							<input type="submit" value="submit" class="btn-primary">
