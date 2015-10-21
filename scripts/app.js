@@ -5,7 +5,7 @@ todos = [
 	},
 	{
 		"text": "task 2",
-		"done": false,
+		"done": true,
 	}
 ];
 angular.module('todoApp', [])
@@ -17,9 +17,15 @@ angular.module('todoApp', [])
 			console.log("addTodo Clicked - new data:" + self.text);
 			self.text = '';
 			console.log(self.todoList);
+			console.log(self.remaining());
 		};
 		self.remaining = function () {
-			
+			var count = 0;
+			angular.forEach(self.todoList, function(todo) {
+				count += todo.done ? 0 : 1 ;
+			});
+			return count;
+			console.log(count);
 		};
 		
 	});
