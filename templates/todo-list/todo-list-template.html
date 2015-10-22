@@ -1,7 +1,10 @@
 <div class="col-md-12" ng-controller="TodoListController as todoList">
 	<h2>TODO App</h2>
 	<div class="todoList">
-		<span class="numberOfList"> {{todoList.remaining()}} of {{todoList.todoList.length}} remaining  <button class="btn-danger btn" ng-click="todoList.delete()">Delete</button></span>
+		<span class="numberOfList" ng-controller='ModalController as modal'>
+		 {{remaining()}} of {{todoList.todoList.length}} remaining  
+		 <button class="btn-danger btn" ng-click="open()">Delete</button>
+		 </span>
 		<ul class="list" ng-repeat="todo in todoList.todoList">
 			<li class="item">
 				<input type="checkbox" ng-model="todo.done">&nbsp;
@@ -10,9 +13,9 @@
 		</ul>
 	</div>
 	<div class="newTask">
-		<form class="form-group" ng-submit="todoList.addTodo()">
+		<form class="form-group" ng-submit="addTodo()">
 			<feildset>
-				<input type="text" size="30" class="form-control" ng-model="todoList.text">
+				<input type="text" size="30" class="form-control" ng-model="text">
 				<input type="submit" value="submit" class="btn btn-primary">
 			</feildset>
 		</form>
