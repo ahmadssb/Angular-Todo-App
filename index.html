@@ -5,41 +5,30 @@
 	<meta charset="UTF-8">
 	<title>TODO APP</title>
 	<link rel="stylesheet" href="../../../../_Libraries/node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../../../_Libraries/bower_components/angular-bootstrap/ui-bootstrap-tpls.js">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12" ng-controller="TodoListController as todoList">
-				<h2>TODO App</h2>
-				<div class="todoList">
-				<span class="numberOfList"> {{todoList.remaining()}} of {{todoList.todoList.length}} remaining  [<a href="">delete</a>]</span>
-					<ul class="list" ng-repeat="todo in todoList.todoList">
-						<li class="item">
-							<input type="checkbox" ng-model="todo.done">&nbsp;
-							<span class="todo-{{todo.done}}">{{todo.text}} - {{todo.done}} </span>
-						</li>
-					</ul>
-				</div>
-				<div class="newTask">
-					<form class="form-group" ng-submit="todoList.addTodo()">
-						<feildset>
-							<input type="text" class="form-control" ng-model="todoList.text"><br>{{todoList.text}}
-						</feildset>
-						<feildset>
-							<input type="submit" value="submit" class="btn-primary">
-						</feildset>
-					</form>
-				</div>
-			</div>
+			<todo-list></todo-list>
 		</div>
 	</div>
+	<!-- Libraries -->
 	<script type="text/javascript" src="../../../../_Libraries/node_modules/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="../../../../_Libraries/node_modules/angular/angular.min.js"></script>
+	<script type="text/javascript" src="../../../../_Libraries/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-route.js"></script>
+
 	<!-- Main App -->
 	<script type="text/javascript" src="scripts/app.js"></script>
+
+	<!-- Controllers -->
+	<script type="text/javascript" src="scripts/controllers/todo-list-controller.js"></script>
+
+	<!-- Directives -->
+	<script type="text/javascript" src="scripts/directives/todo-ilst-directive.js"></script>
 </body>
 
 </html>
